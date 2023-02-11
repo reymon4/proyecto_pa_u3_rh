@@ -62,6 +62,30 @@ public interface IEstudianteRepo {
 	
 	
 	
+	//eliminar
+	public int eliminarPorApellido(String apellido);
+	//Actualizar
+	public int actualizarPorApellido(String apellido, String nombre); //Parámetro, dato que quiero actualizar
+	
+	//------------JOINS----------
+	//3 tipos principales
+	//1. JOIN 
+	//1.1 INNER JOIN (DATOS QUE SE CRUZAN ENTRE TABLAS - INTERSERCCIÓN)
+	//1.2 OUTER JOIN --> Right join, Left join , full outer join (Datos que se cruzan más datos que se especifican)
+	
+	
+	
+	//2. JOIN WHERE (Búsquedas con claves primarias de una tabla A en una B sin usar "JOIN")
+	
+	
+	
+	//3. JOIN FETCH es exclusivo de Jakarta. Se usa para ver relaciones de tablas hijas.
+	//Es una alternativa al Igger y al lazy de una manera más eficiente
+	
+	
+	
+	
+	
 	
 	
 

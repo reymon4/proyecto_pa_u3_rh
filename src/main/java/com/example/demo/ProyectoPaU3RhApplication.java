@@ -21,8 +21,6 @@ public class ProyectoPaU3RhApplication implements CommandLineRunner {
 	@Autowired
 	private IEstudianteService estudianteService;
 
-	@Autowired
-	private EstudianteRepoImpl estudianteRepoImpl;
 
 	public static void main(String[] args) {
 		SpringApplication.run(ProyectoPaU3RhApplication.class, args);
@@ -47,38 +45,46 @@ public class ProyectoPaU3RhApplication implements CommandLineRunner {
 
 				//-------------------------------LISTAS----------------------------------------
 				// QUERY list
-				System.out.println("Query");
-				List<Estudiante>  lista1_estu=this.estudianteService.buscarPorNombreQueryList("Luz");
-				lista1_estu.forEach(System.out::println);
-
-				//eNamedQueryList
-				System.out.println("NamedQueryList");
-				List<Estudiante>  lista2_estu=this.estudianteService.buscarPorNombreNamedQueryList("Reymon");
-				lista2_estu.forEach(System.out::println);
-
-				//NativeQueryTypedNamedList
-				System.out.println("NativeQueryTypedNamedList");
-				List<Estudiante>  lista3_estu=this.estudianteService.buscarPorNombreNativeQueryTypedNamedList("Daniel");
-				lista3_estu.forEach(System.out::println);
-
-
-				// Query 
-				System.out.println("Query");
-				Estudiante estu0=this.estudianteService.buscarPorNombreQueryListFirstResult("Zoila");
-				System.out.println(estu0);
+//				System.out.println("Query");
+//				List<Estudiante>  lista1_estu=this.estudianteService.buscarPorNombreQueryList("Luz");
+//				lista1_estu.forEach(System.out::println);
+//
+//				//eNamedQueryList
+//				System.out.println("NamedQueryList");
+//				List<Estudiante>  lista2_estu=this.estudianteService.buscarPorNombreNamedQueryList("Reymon");
+//				lista2_estu.forEach(System.out::println);
+//
+//				//NativeQueryTypedNamedList
+//				System.out.println("NativeQueryTypedNamedList");
+//				List<Estudiante>  lista3_estu=this.estudianteService.buscarPorNombreNativeQueryTypedNamedList("Daniel");
+//				lista3_estu.forEach(System.out::println);
+//
+//
+//				// Query 
+//				System.out.println("Query");
+//				Estudiante estu0=this.estudianteService.buscarPorNombreQueryListFirstResult("Zoila");
+//				System.out.println(estu0);
+//				
+//				//DTO
+//				System.out.println("DTO");
+//				//EstudianteDTO estu2 = this.estudianteService.buscarPorNombreQueryTypedDTO("Reymon");
+//				System.out.println(this.estudianteService.buscarPorNombreQueryTypedDTO("Daniel"));
+//				
+//				//Criteria API QUERY
+//				System.out.println("Criteria API QUERY");
+//				System.out.println(this.estudianteService.buscarPorNombreQueryCriteria("Reymon"));
+//				
+//				//CRITERIA con AND y OR
+//				System.out.println("Criteria AND y OR");
+//				System.out.println(this.estudianteService.buscarPorNombreQueryCriteriaAndOr("Reymon", "Hidalgo", "M"));
+//	
+				//Eliminar
+				System.out.println("ELIMINAR ");
+				System.out.println(this.estudianteService.eliminarPorApellido("Mancheno"));
 				
-				//DTO
-				System.out.println("DTO");
-				//EstudianteDTO estu2 = this.estudianteService.buscarPorNombreQueryTypedDTO("Reymon");
-				System.out.println(this.estudianteService.buscarPorNombreQueryTypedDTO("Daniel"));
-				
-				//Criteria API QUERY
-				System.out.println("Criteria API QUERY");
-				System.out.println(this.estudianteService.buscarPorNombreQueryCriteria("Reymon"));
-				
-				//CRITERIA con AND y OR
-				System.out.println("Criteria AND y OR");
-				System.out.println(this.estudianteService.buscarPorNombreQueryCriteriaAndOr("Reymon", "Hidalgo", "M"));
+				//Actualizar
+				System.out.println("Actualizar");
+				System.out.println(this.estudianteService.actualizarPorApellido("Pasmay", "Hilda"));
 	}
 
 }
