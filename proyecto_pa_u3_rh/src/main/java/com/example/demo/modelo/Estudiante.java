@@ -31,9 +31,9 @@ import jakarta.persistence.Table;
 
 
 
-@NamedNativeQueries({@NamedNativeQuery(name="Estudiante.buscarPNNNQ",query="select * from estudiante where estu_nombre=:datoNombre"),
-					@NamedNativeQuery(name="Estudiante.buscarPNNNQ1",query="select * from estudiante where estu_nombre=:datoNombre"),
-					 @NamedNativeQuery(name="Estudiante.buscarPNNNQ2",query="select * from estudiante where estu_nombre=:datoNombre")})
+@NamedNativeQueries({@NamedNativeQuery(name="Estudiante.buscarPNNNQ",query="select * from estudiante where estu_nombre=:datoNombre", resultClass = Estudiante.class),
+					@NamedNativeQuery(name="Estudiante.buscarPNNNQ1",query="select * from estudiante where estu_nombre=:datoNombre",resultClass = Estudiante.class),
+					 @NamedNativeQuery(name="Estudiante.buscarPNNNQ2",query="select * from estudiante where estu_nombre=:datoNombre",resultClass = Estudiante.class)})
 public class Estudiante {
 
 	@Id

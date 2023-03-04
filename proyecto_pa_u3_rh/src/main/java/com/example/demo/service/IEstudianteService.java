@@ -56,4 +56,24 @@ public interface IEstudianteService {
 		//DTO
 		
 		public EstudianteDTO buscarPorNombreQueryTypedDTO(String nombre);
+
+
+
+		//Criteria API Query ----> query dinámico (Personalizado)
+		
+		
+		public List<Estudiante> buscarPorNombreQueryCriteria(String nombre);
+		
+		//Lista Criteria con and y or
+		
+		
+		public List<Estudiante> buscarPorNombreQueryCriteriaAndOr(String nombre, String apellido, String bandera);
+		
+		
+		//
+		public int eliminarPorApellido(String apellido);
+		
+		public int actualizarPorApellido(String apellido, String nombre); //Parámetro, dato que quiero actualizar
+		
+		
 }

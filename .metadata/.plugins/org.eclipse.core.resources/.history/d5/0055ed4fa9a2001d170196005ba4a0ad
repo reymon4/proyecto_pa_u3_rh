@@ -1,5 +1,0 @@
-package com.example.demo.t11.repository;
-
-public interface IClienteRepo {
-
-}

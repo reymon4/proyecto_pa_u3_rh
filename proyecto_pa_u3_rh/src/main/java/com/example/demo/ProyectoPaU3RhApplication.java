@@ -7,21 +7,19 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.example.demo.modelo.Estudiante;
-import com.example.demo.repository.EstudianteRepoImpl;
-import com.example.demo.service.IEstudianteService;
+import com.example.demo.modelo.Hotel;
+import com.example.demo.modelo.Habitacion;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
+import com.example.demo.service.IHotelSer;
+
+
 
 @SpringBootApplication
 public class ProyectoPaU3RhApplication implements CommandLineRunner {
 
 	@Autowired
-	private IEstudianteService estudianteService;
+	private IHotelSer hotelSer;
 
-	@Autowired
-	private EstudianteRepoImpl estudianteRepoImpl;
 
 	public static void main(String[] args) {
 		SpringApplication.run(ProyectoPaU3RhApplication.class, args);
@@ -30,42 +28,52 @@ public class ProyectoPaU3RhApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
-		
-		//System.out.println(this.estudianteService.buscarPorNombre("Daniel"));
-		//System.out.println(this.estudianteService.buscarPorGenero("F"));
-		//System.out.println(this.estudianteService.buscarPorApellido("Mancheno"));
-		//System.out.println(this.estudianteService.buscarPorCedula("1720371333"));
-		//System.out.println(this.estudianteService.buscarPorNombreQueryTyped("Reymon"));
-		//System.out.println(this.estudianteService.buscarPorNombreNamedQuery("Daniel"));
-		//System.out.println(this.estudianteService.buscarPorNombreNamedQueryTyped("Reymon"));
-		//System.out.println(this.estudianteService.buscarPorNombreNativeQuery("Luz"));
-		//System.out.println(this.estudianteService.buscarPorNombreNativeQueryTyped("Andres"));
-		
-		
-		
+		System.out.println("LEFT JOIN");
+		System.out.println("\n");
+		List<Hotel> l2_h =hotelSer.buscarHotelOuterLeftJoin("VIP");
+		for (Hotel h: l2_h) {
+			System.out.println(h.getNombre());
+			for (Habitacion ha: h.getHabitaciones()) {
+				System.out.println("Las habitaciones de: "+h.getNombre()+"  son: "+ha.getNumero());
+			}
+		}
 
-				//-------------------------------LISTAS----------------------------------------
-				// QUERY list
-				System.out.println("Query");
-				List<Estudiante>  lista1_estu=this.estudianteService.buscarPorNombreQueryList("Luz");
-				lista1_estu.forEach(System.out::println);
+		System.out.println("Right JOIN");
+		System.out.println("\n");
+		List<Hotel> l3_h =hotelSer.buscarHotelOuterRightJoin("VIP");
+		l3_h.forEach(System.out::println);
+		for (Hotel h: l3_h) {
+			//System.out.println(h.getNombre());
+			/*if(h.getHabitaciones()!=null) {
+				for (Habitacion ha: h.getHabitaciones()) {
+					System.out.println("Las habitaciones de: "+h.getNombre()+"  son: "+ha.getNumero());
+				}
+			}*/
 
-				//eNamedQueryList
-				System.out.println("NamedQueryList");
-				List<Estudiante>  lista2_estu=this.estudianteService.buscarPorNombreNamedQueryList("Reymon");
-				lista2_estu.forEach(System.out::println);
+		}
 
-				//NativeQueryTypedNamedList
-				System.out.println("NativeQueryTypedNamedList");
-				List<Estudiante>  lista3_estu=this.estudianteService.buscarPorNombreNativeQueryTypedNamedList("Daniel");
-				lista3_estu.forEach(System.out::println);
+		/*
+		List<Hotel> l2_h =hotelService.buscarHotelOuterRightJoin("VIP");
+		l2_h.forEach(System.out::println);
+		List<Hotel> l3_h =hotelService.buscarHotelOuterLeftJoin("VIP");
+		l3_h.forEach(System.out::println);
+		List<Hotel> l4_h =hotelService.buscarHotelOuterFullJoin("VIP");
+		l4_h.forEach(System.out::println);
+		List<Hotel> l5_h =hotelService.buscarHotelJoinFetch("VIP");
+		l5_h.forEach(System.out::println);
+		*/
 
-
-				// Query 
-				System.out.println("Query");
-				Estudiante estu0=this.estudianteService.buscarPorNombreQueryListFirstResult("Zoila");
-				System.out.println(estu0);
-
-	}
+		List<Hotel> l1_h =hotelSer.buscarHotelInnerJoin("VIP");
+		l1_h.forEach(System.out::println);
+		System.out.println("\n");
+		System.out.println("JOIN MEJORADO-MISMA FUNCIONALIDAD"); //De lo explicado anteriormente
+		for (Hotel h: l1_h) {
+			System.out.println(h.getNombre());
+			for (Habitacion ha: h.getHabitaciones()) {
+				System.out.println("Las habitaciones de: "+h.getNombre()+"  son: "+ha.getNumero());
 
 }
+		}
+	}}
+	
+			

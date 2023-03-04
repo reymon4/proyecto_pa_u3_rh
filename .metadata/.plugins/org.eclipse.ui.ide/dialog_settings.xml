@@ -38,6 +38,11 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\Reymon\Downloads\pa2_u4_p0_ec-main"/>
+			<item value="C:\Users\Reymon\Documents\workspace-spring-tool-suite-4-4.17.1.RELEASE\proyecto_pa_u4_rh_1"/>
+			<item value="C:\Users\Reymon\Documents\workspace-spring-tool-suite-4-4.17.1.RELEASE\proyecto_pa_u4_rh"/>
+			<item value="C:\Users\Reymon\Downloads\proyecto_pa_u3_rh-Taller31"/>
+			<item value="C:\Users\Reymon\Downloads\proyecto_pa_u3_wd"/>
 			<item value="C:\Users\Reymon\Documents\workspace-spring-tool-suite-4-4.17.1.RELEASE\oneToMany"/>
 			<item value="C:\Users\Reymon\Documents\workspace-spring-tool-suite-4-4.17.1.RELEASE\proyecto_pa_u3_rh"/>
 			<item value="C:\Users\Reymon\Downloads\proyecto_pa_u2_rh-Taller23"/>

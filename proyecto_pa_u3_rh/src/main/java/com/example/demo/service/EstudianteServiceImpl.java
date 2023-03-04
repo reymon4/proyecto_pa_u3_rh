@@ -111,7 +111,31 @@ public class EstudianteServiceImpl implements IEstudianteService {
 	@Override
 	public EstudianteDTO buscarPorNombreQueryTypedDTO(String nombre) {
 		// TODO Auto-generated method stub
-		return this.buscarPorNombreQueryTypedDTO(nombre);
+		return this.estudianteRepo.buscarPorNombreQueryTypedDTO(nombre);
+	}
+
+	@Override
+	public List<Estudiante> buscarPorNombreQueryCriteria(String nombre) {
+		// TODO Auto-generated method stub
+		return this.estudianteRepo.buscarPorNombreQueryCriteria(nombre);
+	}
+
+	@Override
+	public List<Estudiante> buscarPorNombreQueryCriteriaAndOr(String nombre, String apellido, String bandera) {
+		// TODO Auto-generated method stub
+		return this.estudianteRepo.buscarPorNombreQueryCriteriaAndOr(nombre, apellido, bandera);
+	}
+
+	@Override
+	public int eliminarPorApellido(String apellido) {
+		// TODO Auto-generated method stub
+		return this.estudianteRepo.eliminarPorApellido(apellido);
+	}
+
+	@Override
+	public int actualizarPorApellido(String apellido, String nombre) {
+		// TODO Auto-generated method stub
+		return this.estudianteRepo.actualizarPorApellido(apellido, nombre);
 	}
 
 }
